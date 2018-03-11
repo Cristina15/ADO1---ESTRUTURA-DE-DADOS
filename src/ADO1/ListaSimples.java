@@ -73,6 +73,32 @@ public class ListaSimples {
 
     }
 
+    public boolean removerLista(String modelo){
+        No atual = this.primeiro;
+        No anterior = null;
+        if (this.isEmpty()) {
+            return false;
+        } else {
+            while (atual != null) {
+                anterior = atual;
+                atual = atual.getProximo();
+            }
+            if (atual == primeiro) {
+                if (this.primeiro == this.ultimo) {
+                    this.ultimo = null;
+                }
+                this.primeiro = this.primeiro.getProximo();
+            } else {
+                if (atual == ultimo) {
+                    this.ultimo = null;
+                }
+                anterior.setProximo(atual.getProximo());
+            }
+        }
+        this.qtdNo = 0;
+        return true;
+    }
+    
     public boolean removerNo(String modelo) {
         No atual = this.primeiro;
         No anterior = null;
