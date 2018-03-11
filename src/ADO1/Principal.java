@@ -87,18 +87,30 @@ public class Principal {
 
                 case 5:
 
-                    System.out.println("Digite o modelo do veiculo á ser Removido: ");
+                    System.out.println("Digite o modelo do veiculo á ser removido: ");
                     String remover = console.next();
-
+                    
+                    try{
                     listaSimples.removerNo(remover);
+                    }catch (Exception e){
+                        System.out.println("Erro a apagar");
+                    }
                     break;
-
                 case 6:
-
+                   
+                       System.out.println("Digite o modelo do veiculo á ser removido");
+                       String remover2 = console.next();
+                       
+                       //listaSimples.removerLista(remover2); 
+               try {
+                        listaSimples.removerLista(remover2);
+                    } catch (Exception e) {
+                        System.out.println("Erro ao apagar todos os registros");
+                    }
                     break;
 
                 default:
-                    System.out.println("Invalido");
+                    System.out.println(" ");
                     on= false;
                     break;
             }
