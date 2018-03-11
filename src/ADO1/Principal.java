@@ -22,7 +22,7 @@ public class Principal {
         boolean on = false;
         
 
-        while (on == false) {
+        do {
             System.out.println("1 - Entrar com os dados no inicio da lista");
             System.out.println("2 - Entrar com os dados no fim da lista");
             System.out.println("3 - Pesquisar carro na lista");
@@ -30,7 +30,7 @@ public class Principal {
             System.out.println("5 - Remover um elemento da lista");
             System.out.println("6 - Remover todos os elementos da lista");
             System.out.println("7 - Sair");
-
+            opc = console.nextInt();
             switch (opc) {
                 case 1:
                     System.out.print("Digite o Modelo do veiculo: ");
@@ -76,11 +76,13 @@ public class Principal {
                     System.out.println("Digite o modelo do veiculo á ser Pesquisado: ");
                     String pesquisa = console.next();
 
-                    listaSimples.pesquisarNo(pesquisa);
+                    String lista = listaSimples.pesquisarNo(pesquisa);
+                    System.out.println(lista);
                     break;
 
                 case 4:
-                    listaSimples.imprimirLista();
+                    String result = listaSimples.imprimirLista();
+                    System.out.println(result);
                     break;
 
                 case 5:
@@ -100,6 +102,6 @@ public class Principal {
                     on= false;
                     break;
             }
-        }
+        }while (on == false);
     }
 }
